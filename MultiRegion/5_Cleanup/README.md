@@ -14,12 +14,14 @@ If you manually deploy a region in module 1_API
 - Delete the SSL Certificates in ACM (you may need to wait some time for resources
   to fully un-deploy before this is possible) - in each region
 - Delete the IAM Roles and Policies you created
+- Delete the S3 buckets you created to store the app code
 
 If you used CloudFormation to deploy a 1_API regions
 
 - In the console, select the correct regions
 - Go into CloudFormation and select the wild-rydes-api stack and then select *delete*
 - The template will be deleted along with all resources it created
+- Delete the S3 buckets you created to store the app code
 
 ### Module 2_UI
 
