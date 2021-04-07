@@ -56,6 +56,12 @@ Select ***Web*** as your content distribution method and click *Get Started*
 
 Select the S3 Static Website Bucket as your ***Origin Domain Name*** - it should automatically be in the list of possible origins
 
+![Restrict Bucket Access](images/restrict-access.png)
+
+Set ***Restrict Bucket Access*** to Yes to always access the S3 bucket using CloudFront URLs
+
+Set to ***Create a New Identity*** and ***Update Bucket Policy*** to set the correct permisions on the bucket for OAI
+
 ![Configure Origin](images/configure-origin.png)
 
 Set the default behavior to redirect to HTTPS
@@ -167,7 +173,7 @@ custom settings.
 Next, you'll need to upload the UI to the S3 website bucket specified in step 1. You can
 do this with:
 
-    aws s3 sync --acl public-read --delete dist/ s3://[bucket_name_from_cloudformation_ui_stack]
+    aws s3 sync --delete dist/ s3://[bucket_name_from_cloudformation_ui_stack]
 
 Note that you must replace `[bucket-name]` in this command with the bucket
 name output from the CloudFormation stack in step 1.
